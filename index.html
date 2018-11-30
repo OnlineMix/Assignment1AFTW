@@ -1,0 +1,74 @@
+<html>
+
+    <head>
+    
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+            
+        <title>Fermin's Songs</title>
+            
+        <link rel="stylesheet" href="./static/style.css" type="text/css" media="screen" />
+    
+    </head>
+
+    <body>
+           
+        
+
+        <div id="container">
+              
+        <div id="wrapper">
+
+        <div id="content">
+                          
+        <div class="post">
+        <h1>My Latest Songs I am Working On!</h1>
+        Welcome to my music site. Here I will present three records of mine that can be played back three different ways.
+        I used a normal audio tag, a hyperlink, and javascript to create the following experiences:
+
+        <p>Song 1 | No More:</p>
+        <p><audio src="nomore.mp3" controls autobuffer autoplay></audio></p>
+        
+        <br>
+        
+        <p>Song 2 | Calling Back:</p>
+        <p>Listen to Calling Back in a new window by <a href="callingback.mp3">clicking here!</a></p>
+        
+        <br>
+        
+        <p>Song 3 | What You Like:</p>
+            
+        <p>
+            <style>
+             #meter {width: 36px; height: 36px; display: inline-block; border: 1px solid black;}
+                .clip {background: #FF6600;}
+                .noclip {background: #00FF66;}
+            </style>
+        </p>
+             
+        <p>
+            <button click="sample.playPause()">Play/Pause</button>
+            <p>Master gain: <input type="range" min="0" step="0.1" max="5" oninput="sample.gainRangeChanged(this)"></p>
+            <p>Meter level: <span id="meter"></span></p>
+        </p>
+              
+        <script src="./static/js/shared.js"></script>
+        <script src="metering-sample.js"></script>
+        <script>
+        sample = new MeteringSample(document.querySelector('#meter'));
+              
+        document.querySelector('button').addEventListener('click', function() {
+        sample.playPause();
+        });
+        </script>
+              
+        </div>
+                    
+        </div>
+              
+        </div>
+              
+        </div>
+
+    </body>
+
+</html>
